@@ -4,19 +4,20 @@
 [![Travis Build Status](https://travis-ci.org/opendxl/bootprint-opendxl.svg?branch=master)](https://travis-ci.org/opendxl/bootprint-opendx)
 [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
 
-> Converts a opendxl-definition into a static html page
+> Converts an OpenDXL-Specification into a static html page
 
 ## Overview
 
 This package contains a template, partials and styles for [bootprint](http://npmjs.com/bootprint) to convert
-OpenDXL-Specifications into a static HTML-page.
+[OpenDXL-Specifications](https://github.com/opendxl/opendxl-api-specification) into a static HTML-page.
 
 ## Installation
 
-In order to use `bootprint-openapi` from the command line
-you have to install `bootprint` and `bootprint-openapi` globally:
+In order to use `bootprint-opendxl` from the command line
+you have to install `bootprint` and `@opendxl/bootprint-opendxl` globally:
 
 ```bash
+npm install -g bootprint
 npm install -g @opendxl/bootprint-opendxl
 ```
 
