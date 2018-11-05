@@ -17,8 +17,7 @@ In order to use `bootprint-openapi` from the command line
 you have to install `bootprint` and `bootprint-openapi` globally:
 
 ```bash
-npm install -g bootprint
-npm install -g bootprint-opendxl
+npm install -g @opendxl/bootprint-opendxl
 ```
 
 ## Usage
