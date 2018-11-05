@@ -1,6 +1,6 @@
 # bootprint-opendxl 
 
-[![NPM version](https://img.shields.io/npm/v/@opendxl/bootprint-opendxl.svg)](https://npmjs.com/package/@opendxl/bootprint-opendxl)
+[![NPM version](https://img.shields.io/npm/v/bootprint-opendxl.svg)](https://npmjs.com/package/bootprint-opendxl)
 [![Travis Build Status](https://travis-ci.org/opendxl/bootprint-opendxl.svg?branch=master)](https://travis-ci.org/opendxl/bootprint-opendx)
 [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
 
