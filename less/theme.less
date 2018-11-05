@@ -1,0 +1,98 @@
+@container-lg: 900px;
+@container-sm: 800px;
+
+// Draw a panel in a given color
+.opendxl--panel-color(@color) {
+  .panel-variant(darken(@color,30%), @panel-default-text, @color, darken(@color, 30%));
+
+  .name {
+    font-weight: bold;
+  }
+  .summary {
+    .pull-right
+  }
+}
+
+.opendxl--panel {
+
+  &-solution {
+    .opendxl--panel-color(#e7f0f7);
+  }
+
+  &-service {
+    .opendxl--panel-color(#e7f6ec);
+  }
+
+  &-request {
+    .opendxl--panel-color(#f5e8e8);
+  }
+
+  &-event {
+    .opendxl--panel-color(#f9f2e9);
+  }
+  
+}
+
+.odxl-event-payload {
+  .named-section(@msg-odxl-section-event-payload);
+}
+
+.odxl-request-payload {
+  .named-section(@msg-odxl-section-request-payload);
+}
+
+.odxl-response-payload {
+  .named-section(@msg-odxl-section-response-payload);
+}
+
+.odxl-error-responses {
+  .named-section(@msg-odxl-section-error-responses);
+}
+
+.table-header(@label,@width: auto) {
+  width: auto;
+  &:before {
+    content: @label;
+  }
+}
+
+// Tables
+table.table {
+  th.odxl-param-name {
+    .table-header(@msg-odxl-param-name, 10%);
+  }
+  th.odxl-param-otherField {
+    .table-header(@msg-odxl-param-otherField, 10%);
+  }
+  th.odxl-param-metadata {
+    .table-header(@msg-odxl-param-metadata, 10%);
+  }
+  th.odxl-param-request-topics {
+    .table-header(@msg-odxl-param-request-topics, 10%);
+  }
+  th.odxl-param-example {
+    .table-header(@msg-odxl-param-example);
+  }
+  th.odxl-param-description {
+    .table-header(@msg-odxl-param-description);
+  }
+  th.odxl-param-event-topics {
+    .table-header(@msg-odxl-param-event-topics);
+  }
+  th.odxl-param-services {
+    .table-header(@msg-odxl-param-services);
+  }
+}
+
+code.highlight {
+  padding: 0
+}
+
+.odxl-info {
+  font-weight: bold;
+  span {
+    font-family: monospace;
+    font-weight: normal;
+    font-size: 1.1em;
+  }
+}

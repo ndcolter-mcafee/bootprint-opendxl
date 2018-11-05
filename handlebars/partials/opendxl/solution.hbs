@@ -1,0 +1,76 @@
+<div id="solution-{{htmlId solutionKey}}" class="opendxl--panel-solution panel">
+    <div class="panel-heading">
+        <h3 class="panel-title"><span class="name"><strong>{{solutionKey}}</strong></h3>        
+    </div>
+    <div class="panel-body">    
+        {{#if solution.info.description}}
+            {{md solution.info.description}}
+        {{/if}}
+        {{#if solution.externalDocs}}
+            {{#with solution.externalDocs}}
+                <p>{{>opendxl/externalDocs}}</p>
+            {{/with}}
+        {{/if}}
+        <section>
+            <dl>                
+                {{#with solution.info}}
+                    {{#if version}}                    
+                        <dt class="property-name">Version:</dt>
+                        <dd class="property-value">
+                            <div class="row">
+                                <div class="col-md-12"><p>{{version}}</p></div>
+                            </div>
+                        </dd>
+                    {{/if}}
+                {{/with}}
+            </dl>
+
+            {{#if solution.events}}
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th class="odxl-param-event-topics"></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {{#eachSortedRef solution.events}}
+                            {{#if $ref}}
+                                <tr>
+                                    <td>
+                                        <a href="#event-{{htmlId (opendxl--normalize-solution-event $ref)}}"> 
+                                            {{opendxl--normalize-solution-event $ref}}
+                                        </a>
+                                    </td>
+                                </tr>
+                            {{/if}}
+                        {{/eachSortedRef}}
+                    </tbody>
+                </table>
+            {{/if}}
+            
+            {{#if solution.services}}
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th class="odxl-param-services"></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {{#eachSortedRef solution.services}}
+                            {{#if $ref}}
+                                <tr>
+                                    <td>
+                                        <a href="#service-{{htmlId (opendxl--normalize-solution-service $ref)}}"> 
+                                            {{opendxl--normalize-solution-service $ref}}
+                                        </a>
+                                    </td>
+                                </tr>
+                            {{/if}}
+                        {{/eachSortedRef}}
+                    </tbody>
+                </table>
+            {{/if}}                                                            
+            
+        </section>                            
+    </div>
+</div>

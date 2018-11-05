@@ -1,0 +1,21 @@
+{{#if message.otherFields}}
+   {{#with message.otherFields}}
+    <table class="table">
+            <thead>
+                <tr>
+                    <th class="odxl-param-otherField"></th>
+                    <th class="odxl-param-description"></th>
+                    <th class="odxl-param-annotation"></th>
+                    <th class="odxl-param-example"></th>
+                </tr>
+            </thead>
+            <tbody>
+                {{#if $ref}}
+                    {{> opendxl/otherFieldsProps otherFields=(json-schema--resolve-ref $ref) $ref=$ref}}
+                {{else}}
+                    {{> opendxl/otherFieldsProps otherFields=.}}
+                {{/if}}
+            </tbody>
+        </table>
+    {{/with}}
+{{/if}}

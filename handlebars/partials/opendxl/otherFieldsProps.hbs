@@ -1,0 +1,18 @@
+{{#eachSorted otherFields.properties}}
+    <tr>
+        <td>
+            {{@key}}
+        </td>
+        <td>
+            {{md description}}
+        </td>
+        <td>
+            {{#if required}}
+                <span class="json-property-required"></span>
+            {{/if}}
+        </td>
+        <td>
+            {{example}}
+        </td>    
+    </tr>
+{{/eachSorted}}

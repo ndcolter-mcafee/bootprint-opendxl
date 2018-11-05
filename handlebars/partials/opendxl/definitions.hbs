@@ -1,0 +1,6 @@
+{{#if definitions}}
+    <h2>Definitions</h2>
+    {{#eachSorted definitions}}
+        {{>json-schema/main-panel . title=@key anchor="/definitions"}}
+    {{/eachSorted}}
+{{/if}}    

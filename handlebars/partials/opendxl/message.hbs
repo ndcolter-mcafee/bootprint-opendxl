@@ -1,0 +1,20 @@
+{{#if class}}
+<section class="{{class}}">
+{{/if}}
+    {{#if message.description}}
+        {{md message.description}}
+    {{/if}}
+    {{#if message.externalDocs}}
+        {{#with message.externalDocs}}
+            <p>{{>opendxl/externalDocs}}</p>
+        {{/with}}
+    {{/if}}                
+    {{#if message.payload}}
+        {{>opendxl/payload payload=message.payload}}
+    {{/if}}
+    {{>opendxl/otherFields message=message}}
+{{#if class}}        
+</section>
+{{/if}}
+        
+

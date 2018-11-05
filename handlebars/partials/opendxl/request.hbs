@@ -1,0 +1,14 @@
+<div id="request-{{htmlId requestTopic}}" class="opendxl--panel-request panel">
+    <div class="panel-heading">
+        <h3 class="panel-title"><span class="name"><strong>{{requestTopic}}</strong></h3>        
+    </div>
+    <div class="panel-body">        
+        {{>opendxl/message message=request class="odxl-request-payload"}}                            
+        {{#if request.response}}
+            {{>opendxl/message message=request.response class="odxl-response-payload"}}    
+        {{/if}}
+        {{#if request.errorResponses}}
+            {{>opendxl/errorResponses message=request}}
+        {{/if}}                        
+    </div>
+</div>

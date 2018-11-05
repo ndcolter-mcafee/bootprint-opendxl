@@ -1,0 +1,80 @@
+<div id="service-{{htmlId serviceKey}}" class="opendxl--panel-service panel">
+    <div class="panel-heading">
+        <h3 class="panel-title"><span class="name"><strong>{{serviceKey}}</strong></h3>        
+    </div>
+    <div class="panel-body">    
+        {{#if service.info.description}}
+            {{md service.info.description}}
+        {{/if}}
+        {{#if service.externalDocs}}
+            {{#with service.externalDocs}}
+                <p>{{>opendxl/externalDocs}}</p>
+            {{/with}}
+        {{/if}}                            
+        <section>
+            <dl>                
+                {{#with service.info}}
+                    {{#if version}}                    
+                        <dt class="property-name">Version:</dt>
+                        <dd class="property-value">
+                            <div class="row">
+                                <div class="col-md-12"><p>{{version}}</p></div>
+                            </div>
+                        </dd>
+                    {{/if}}
+                {{/with}}
+            </dl>
+                        
+            {{#if service.requests}}
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th class="odxl-param-request-topics"></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {{#eachSortedRef service.requests}}
+                            {{#if $ref}}
+                                <tr>
+                                    <td>
+                                        <a href="#request-{{htmlId (opendxl--normalize-service-request $ref)}}"> 
+                                            {{opendxl--normalize-service-request $ref}}
+                                        </a>
+                                    </td>
+                                </tr>
+                            {{/if}}
+                        {{/eachSortedRef}}
+                    </tbody>
+                </table>
+            {{/if}}
+            
+            {{#if service.metadata.properties}}
+                <table class="table">
+                        <thead>
+                            <tr>
+                                <th class="odxl-param-metadata"></th>
+                                <th class="odxl-param-description"></th>
+                                <th class="odxl-param-example"></th>
+                            </tr>
+                        </thead>
+                        <tbody>   
+                        {{#eachSorted service.metadata.properties}}
+                            <tr>
+                                <td>
+                                    {{@key}}
+                                </td>
+                                <td>
+                                    {{description}}
+                                </td>
+                                <td>
+                                    {{example}}
+                                </td>
+                            </tr>
+                        {{/eachSorted}}                                                 
+                        </tbody>
+                    </table>
+            {{/if}}
+                        
+        </section>                    
+    </div>
+</div>

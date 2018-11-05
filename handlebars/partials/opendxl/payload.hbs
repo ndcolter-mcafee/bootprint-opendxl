@@ -1,0 +1,13 @@
+{{#if payload.$ref}}
+    <div class="row">
+        <div class="col-md-12 odxl-request-model">
+            {{>json-schema/main-panel payload}}
+        </div>
+    </div>
+{{else}}
+    <div class="row">
+        <div class="col-md-12 odxl-request-model">
+            {{>json-schema/main-panel payload title="payload" anchor="/definitions"}}
+        </div>
+    </div>                    
+{{/if}}

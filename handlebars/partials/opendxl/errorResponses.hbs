@@ -1,0 +1,14 @@
+{{#if errorResponses}}
+    <section class="odxl-error-responses">
+        <dl>
+            {{#each errorResponses}}
+                <dt class="odxl-error-response">
+                    Error Code: {{@key}}                
+                </dt>
+                <dd class="odxl-error-response">
+                    {{>opendxl/message message=.}}
+                </dd>
+            {{/each}}
+        </dl>
+    </section>
+{{/if}}

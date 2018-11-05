@@ -1,0 +1,41 @@
+{
+  "name": "@opendxl/bootprint-opendxl",
+  "version": "0.1.0",
+  "author": "McAfee LLC",
+  "description": "Converts an OpenDXL-definition into a static html page",
+  "main": "index.js",
+  "preferGlobal": true,
+  "license": "Apache-2.0",
+  "scripts": {
+    "test": "mocha --recursive"
+  },
+  "dependencies": {
+    "bootprint": "^1.0.0",
+    "bootprint-json-schema": "^1.0.0",
+    "handlebars": "^4.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/opendxl/bootprint-opendxl"
+  },
+  "bugs": {
+    "url": "https://github.com/opendxl/bootprint-opendxl/issues"
+  },
+  "homepage": "https://github.com/opendxl/bootprint-opendxl",
+  "peerDependencies": {
+    "bootprint": "^1.0.0"
+  },
+  "devDependencies": {
+    "mocha": "^2.3.3",
+    "trace-and-clarify-if-possible": "^1.0.0"
+  },
+  "keywords": [
+    "opendxl-to-html"
+  ],
+  "files": [
+    "index.js",
+    "handlebars",
+    "less",
+    "lib"
+  ]
+}
