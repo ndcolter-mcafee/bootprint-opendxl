@@ -14,11 +14,11 @@ This package contains a template, partials and styles for [bootprint](http://npm
 ## Installation
 
 In order to use `bootprint-opendxl` from the command line
-you have to install `bootprint` and `@opendxl/bootprint-opendxl` globally:
+you have to install `bootprint` and `bootprint-opendxl` globally:
 
 ```bash
 npm install -g bootprint
-npm install -g @opendxl/bootprint-opendxl
+npm install -g bootprint-opendxl
 ```
 
 ## Usage
