@@ -1,6 +1,6 @@
 {
   "name": "bootprint-opendxl",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "author": "McAfee LLC",
   "description": "Converts an OpenDXL-definition into a static html page",
   "main": "index.js",
