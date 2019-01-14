@@ -26,26 +26,55 @@
             </dl>
 
             {{#if solution.events}}
-                <table class="table">
-                    <thead>
-                        <tr>
-                            <th class="odxl-param-event-topics"></th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        {{#eachSortedRef solution.events}}
-                            {{#if $ref}}
-                                <tr>
-                                    <td>
-                                        <a href="#event-{{htmlId (opendxl--normalize-solution-event $ref)}}"> 
-                                            {{opendxl--normalize-solution-event $ref}}
-                                        </a>
-                                    </td>
-                                </tr>
-                            {{/if}}
-                        {{/eachSortedRef}}
-                    </tbody>
-                </table>
+                {{#if (opendxl-has-outgoing solution.events)}}
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th class="odxl-param-event-topics"></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {{#eachSortedRef solution.events}}
+                                {{#if $ref}}
+                                    {{#unless (opendxl-is-incoming $ref)}}
+                                        <tr>
+                                            <td>
+                                                <a href="#event-{{htmlId (opendxl--normalize-solution-event $ref)}}">
+                                                    {{opendxl--normalize-solution-event $ref}}
+                                                </a>
+                                            </td>
+                                        </tr>
+                                    {{/unless}}
+                                {{/if}}
+                            {{/eachSortedRef}}
+                        </tbody>
+                    </table>
+                {{/if}}
+                {{#if (opendxl-has-incoming solution.events)}}
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th class="odxl-param-event-topics-incoming"></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {{#eachSortedRef solution.events}}
+                                {{#if $ref}}
+                                    {{#if (opendxl-is-incoming $ref)}}
+                                        <tr>
+                                            <td>
+                                                <a href="#event-{{htmlId (opendxl--normalize-solution-event $ref)}}">
+                                                    {{opendxl--normalize-solution-event $ref}}
+                                                </a>
+                                            </td>
+                                        </tr>
+                                    {{/if}}
+                                {{/if}}
+                            {{/eachSortedRef}}
+                        </tbody>
+                    </table>
+                {{/if}}
+
             {{/if}}
             
             {{#if solution.services}}
