@@ -19,10 +19,4 @@ describe('Basic test', function () {
   it('Generate output for acme.yaml', function () {
     return generate('acme.yaml')
   })
-  it('Generate output for dxlbroker.json', function () {
-    return generate('dxlbroker.json')
-  })
-  it('Generate output for dxlbroker.yaml', function () {
-    return generate('dxlbroker.yaml')
-  })
 })
