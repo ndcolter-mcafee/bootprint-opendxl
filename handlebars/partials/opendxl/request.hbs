@@ -7,6 +7,9 @@
         {{#if request.response}}
             {{>opendxl/message message=request.response class="odxl-response-payload"}}    
         {{/if}}
+        {{#if request.alternateResponses}}
+            {{>opendxl/alternateResponses message=request}}
+        {{/if}}
         {{#if request.errorResponses}}
             {{>opendxl/errorResponses message=request}}
         {{/if}}                        

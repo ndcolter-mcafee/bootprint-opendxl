@@ -1,0 +1,14 @@
+{{#if alternateResponses}}
+    <section class="odxl-alternate-responses">
+        <dl>
+            {{#each alternateResponses}}
+                <dt class="odxl-alternate-response">
+                    Alternative Response: {{@key}}
+                </dt>
+                <dd class="odxl-alternate-response">
+                    {{>opendxl/message message=.}}
+                </dd>
+            {{/each}}
+        </dl>
+    </section>
+{{/if}}
